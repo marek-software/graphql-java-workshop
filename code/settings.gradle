@@ -19,7 +19,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = 'code'
-include 'template'
 include 'first'
 include 'first-finished'
 include 'pet-sanctuary-1'
