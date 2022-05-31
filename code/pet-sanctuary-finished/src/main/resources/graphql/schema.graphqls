@@ -1,0 +1,64 @@
+# Animal sanctuary API to manage a list of animals
+
+type Query {
+    pets(first: Int, after: String, last: Int, before: String): PetConnection
+}
+
+type Mutation {
+    addDog(input: AddDogInput!): AddDogPayload
+}
+
+input AddDogInput {
+    name: String!
+    shedding: Boolean
+}
+type AddDogPayload {
+    dog: Pet
+}
+
+type PetConnection {
+    edges: [PetEdge]
+    pageInfo: PageInfo!
+}
+type PetEdge {
+    cursor: String!
+    node: Pet!
+}
+type PageInfo {
+    startCursor: String
+    endCursor: String
+    hasNextPage: Boolean!
+    hasPreviousPage: Boolean!
+}
+
+type Employee {
+    id: ID!
+    name: String
+    manager: Employee
+    salary: String
+}
+
+interface Pet {
+    id: ID!
+    name: String
+    keeper: Employee
+    bestFriend: PetFriend
+}
+
+union PetFriend = Dog | Cat | Employee
+
+type Dog implements Pet{
+    id: ID!
+    name: String
+    shedding: Boolean
+    keeper: Employee
+}
+
+type Cat implements Pet{
+    id: ID!
+    name: String
+    outdoor: Boolean
+    keeper: Employee
+}
+
+

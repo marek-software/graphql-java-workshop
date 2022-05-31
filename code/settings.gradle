@@ -1,0 +1,40 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/snapshot' }
+        gradlePluginPortal()
+    }
+    plugins {
+        id 'org.springframework.boot' version '2.7.0'
+        id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    }
+
+}
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/snapshot' }
+    }
+}
+
+rootProject.name = 'code'
+include 'template'
+include 'first'
+include 'first-finished'
+include 'pet-sanctuary-1'
+include 'pet-sanctuary-1-finished'
+include 'pet-sanctuary-2'
+include 'pet-sanctuary-2-finished'
+include 'pet-sanctuary-3'
+include 'pet-sanctuary-3-finished'
+include 'pet-sanctuary-4'
+include 'pet-sanctuary-4-finished'
+include 'pet-sanctuary-5'
+include 'pet-sanctuary-5-finished'
+include 'pet-sanctuary-6'
+include 'pet-sanctuary-6-finished'
+include 'pet-sanctuary-7'
+include 'pet-sanctuary-7-finished'
+include 'pet-sanctuary-8'
+include 'pet-sanctuary-8-finished'

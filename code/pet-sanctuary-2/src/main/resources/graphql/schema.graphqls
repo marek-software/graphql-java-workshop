@@ -1,0 +1,14 @@
+type Query {
+   dogs: [Dog]
+   cats: [Cat]
+}
+
+type Dog {
+   id: ID!
+   name: String
+}
+
+type Cat {
+   id: ID!
+   name: String
+}

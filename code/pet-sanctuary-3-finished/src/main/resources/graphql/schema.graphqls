@@ -1,0 +1,36 @@
+type Query {
+    dogs: [Dog]
+    cats: [Cat]
+    employee(id: ID!): Employee
+}
+
+type Mutation {
+    changeEmployeeName(input: ChangeEmployeeNameInput!): ChangeEmployeeNamePayload
+}
+
+input ChangeEmployeeNameInput {
+    id: ID!
+    newName: String!
+}
+type ChangeEmployeeNamePayload {
+    employee: Employee
+}
+
+type Dog {
+    id: ID!
+    name: String
+    shedding: Boolean
+    keeper: Employee
+}
+
+type Cat {
+    id: ID!
+    name: String
+    outdoor: Boolean
+    keeper: Employee
+}
+
+type Employee {
+    id: ID!
+    name: String
+}

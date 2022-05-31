@@ -1,0 +1,41 @@
+type Query {
+    dogs: [Dog]
+    cats: [Cat]
+    employee(id: ID!): Employee
+    node(id: ID!): Node
+}
+
+type Mutation {
+    changeEmployeeName(input: ChangeEmployeeNameInput!): ChangeEmployeeNamePayload
+}
+
+input ChangeEmployeeNameInput {
+    id: ID!
+    newName: String!
+}
+type ChangeEmployeeNamePayload {
+    employee: Employee
+}
+
+type Dog implements Node{
+    id: ID!
+    name: String
+    shedding: Boolean
+    keeper: Employee
+}
+
+type Cat implements Node{
+    id: ID!
+    name: String
+    outdoor: Boolean
+    keeper: Employee
+}
+
+type Employee implements Node{
+    id: ID!
+    name: String
+}
+
+interface Node {
+    id:ID!
+}
